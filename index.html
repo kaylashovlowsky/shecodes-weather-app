@@ -4,12 +4,104 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="src/style.css" />
+    <title>Weather Application</title>
 
-    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/72af7483f8.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <link rel="stylesheet" href="src/style.css" />
   </head>
+
   <body>
-    <h1>Hello World!</h1>
+    <div class="container">
+      <div class="card" style="width: 40rem">
+        <div class="card-body">
+          <form id="location-input">
+            <div class="mb-3 city">
+              <input
+                type="text"
+                id="city-input"
+                placeholder="Enter city or zipcode"
+              />
+            </div>
+
+            <button type="button" class="btn btn-light btn-forecast">
+              Get forecast
+            </button>
+          </form>
+          <h1></h1>
+          <h2 id="temperature-display">80°</h2>
+          <h3><i class="fas fa-sun sun-icon"></i></h3>
+
+          <p id="date-display">Today</p>
+          <br />
+
+          <div class="precipitation">percipitation: 0 in</div>
+          <div class="humidity">humidity: 57%</div>
+
+          <div class="row weekdays">
+            <div class="col">Mon</div>
+            <div class="col">Tues</div>
+            <div class="col">Wed</div>
+            <div class="col">Thurs</div>
+            <div class="col">Fri</div>
+          </div>
+          <div class="row weather-icons">
+            <div class="col">
+              <i class="fas fa-cloud-sun-rain"></i>
+            </div>
+            <div class="col">
+              <i class="fas fa-cloud-sun"></i>
+            </div>
+            <div class="col">
+              <i class="fas fa-cloud-showers-heavy"></i>
+            </div>
+            <div class="col">
+              <i class="fas fa-cloud"></i>
+            </div>
+            <div class="col">
+              <i class="fas fa-cloud"></i>
+            </div>
+          </div>
+          <div class="row weather-description">
+            <div class="col">sun/rain</div>
+            <div class="col">part sun</div>
+            <div class="col">rain</div>
+            <div class="col">cloudy</div>
+            <div class="col">cloudy</div>
+          </div>
+          <div class="row temperature">
+            <div class="col">65°F</div>
+            <div class="col">75°F</div>
+            <div class="col">58°F</div>
+            <div class="col">60°F</div>
+            <div class="col">63°F</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <span id="source-code">
+      <a href="https://github.com/kaylashovlowsky/weather-app-project">
+        Open source-code</a
+      >
+      by Kayla Shovlowsky
+    </span>
 
     <script src="src/index.js"></script>
   </body>
