@@ -31,6 +31,14 @@ p {
 
 .container {
   font-family: varela round;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card {
+  display: block;
+  position: relative;
+  margin: 0 auto;
 }
 
 .city {
