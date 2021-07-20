@@ -39,6 +39,12 @@ p {
   display: block;
   position: relative;
   margin: 0 auto;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.card-body {
+  margin: 40px 40px;
 }
 
 .city {
