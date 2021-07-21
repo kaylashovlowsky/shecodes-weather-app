@@ -58,6 +58,10 @@ p {
   font-size: 15px;
 }
 
+.celsius {
+  font-size: 16px;
+}
+
 #date-display {
   font-size: 16px;
   font-weight: lighter;
