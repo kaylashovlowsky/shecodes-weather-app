@@ -51,6 +51,7 @@ p {
 }
 
 #location-input {
+  max-width: 500px;
 }
 
 .currentTemperature {

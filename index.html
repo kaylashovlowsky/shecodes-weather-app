@@ -31,23 +31,28 @@
     <div class="container">
       <div class="card" style="width: 50rem">
         <div class="card-body">
-          <form id="location-input">
-          <div class="mb-3">
-            
-            <input
-              type="text"
-              class="form-control"
-              id="city-input"
-              placeholder="Enter city or zipcode"
-            />
+          <div class="row">
+            <div class="col-8">
+              <form id="location-input">
+                <div class="mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="city-input"
+                    placeholder="Enter city or zipcode"
+                  />
+                </div>
+              </form>
+            </div>
+            <div class="col-4">
+              <form>
+                <button type="button" class="btn btn-light btn-forecast">
+                  Get forecast
+                </button>
+              </form>
+            </div>
           </div>
-          </form>
-            
 
-            <button type="button" class="btn btn-light btn-forecast">
-              Get forecast
-            </button>
-          </form>
           <h1></h1>
           <h2 id="temperature-display">80°</h2>
           <h3><i class="fas fa-sun sun-icon"></i></h3>
