@@ -59,12 +59,23 @@ p {
 }
 
 #date-display {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: lighter;
+  margin: 0;
+}
+
+#weather-description {
+  font-size: 16px;
+  font-weight: lighter;
+}
+.col-3 {
+  flex: 0 0 auto;
+  width: 25%;
 }
 
 .btn-forecast {
   background-color: turquoise;
+  color: white;
 }
 
 #source-code {
