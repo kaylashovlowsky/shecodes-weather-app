@@ -65,6 +65,7 @@ p {
 
 .btn-forecast {
   background-color: turquoise;
+  max-width: 300px;
 }
 
 #source-code {
