@@ -50,12 +50,16 @@ p {
   padding: 20px 0px 5px 0px;
 }
 
+#location-input {
+}
+
 .currentTemperature {
   font-size: 15px;
 }
 
 #date-display {
-  font-size: 25px;
+  font-size: 15px;
+  font-weight: lighter;
 }
 
 .btn-forecast {

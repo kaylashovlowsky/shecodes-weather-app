@@ -40,6 +40,6 @@ if (minute < 10) {
 }
 
 let today = document.querySelector("#date-display");
-today.innerHTML = `${day} @ ${hour}:${minute}`;
+today.innerHTML = `${day} ${hour}:${minute}`;
 
 navigator.geolocation.getCurrentPosition(enterCity);
