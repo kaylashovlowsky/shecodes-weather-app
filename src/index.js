@@ -16,6 +16,16 @@ function enterCity(event) {
   axios.get(apiUrl).then(weatherDisplay);
 }
 
+function convertToFahrenheit(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature-display");
+  let temperature = temperatureElement.innerHTML;
+  temperatureElement.innerHTML = Math.round((temperature * 9) / 5 + 32);
+}
+
+let fahernheitLink = document.querySelector("#fahrenheit-link");
+fahernheitLink.addEventListener("click", convertToFahrenheit);
+
 let form = document.querySelector("#location-input");
 form.addEventListener("submit", enterCity);
 
