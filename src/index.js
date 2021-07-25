@@ -1,3 +1,17 @@
+function displayWeatherElements(response) {
+  console.log(response.data);
+  let temperatureElement = document.querySelector("#temperature-display");
+  temperatureElement = Math.round(response.data.main.temp);
+  let wind = Math.round(response.data.wind[speed]);
+  let windDisplay = document.querySelector("#wind-speed");
+  windDisplay.innerHTML = `${wind} mph`;
+}
+
+let apiKey = "632a5d0f15a7053d4f021e44e4d50ed0";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Seattle&appid=${apiKey}&units=imperial`;
+console.log(apiUrl);
+axios.get(apiUrl).then(displayWeatherElements);
+
 function weatherDisplay(response) {
   let temperature = Math.round(response.data.main.temp);
   let heading = document.querySelector("#temperature-display");
@@ -8,7 +22,6 @@ function enterCity(event) {
   event.preventDefault();
   let locationSearch = document.querySelector("#city-input");
   let display = document.querySelector("h1");
-
   let apiKey = "632a5d0f15a7053d4f021e44e4d50ed0";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${locationSearch.value}&appid=${apiKey}&units=metric`;
 
@@ -24,21 +37,11 @@ function convertToFahrenheit(event) {
   temperatureElement.innerHTML = Math.round((temperature * 9) / 5 + 32);
 }
 
-//function convertToCelsius(event) {
-//event.preventDefault();
-//let temperatureElement = document.querySelector("#temperature-display");
-//let temperature = temperatureElement.innerHTML;
-//temperatureElement.innerHTML = Math.round((temperature * 9) / 5 + 32);
-//}
+let form = document.querySelector("#location-input");
+form.addEventListener("submit", enterCity);
 
 let fahernheitLink = document.querySelector("#fahrenheit-link");
 fahernheitLink.addEventListener("click", convertToFahrenheit);
-
-//let celsiusLink = document.querySelector("#celsius-link");
-//celsiusLink.addEventListener("click", convertToCelsius);
-
-let form = document.querySelector("#location-input");
-form.addEventListener("submit", enterCity);
 
 let now = new Date();
 let days = [
