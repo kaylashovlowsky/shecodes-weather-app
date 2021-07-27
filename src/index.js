@@ -1,14 +1,18 @@
 function displayWeatherElements(response) {
+  console.log(response.data);
   let temperature = Math.round(response.data.main.temp);
   let heading = document.querySelector("#temperature-display");
   let descriptionElement = document.querySelector("#weather-description");
   let description = response.data.weather[0].description;
   let wind = Math.round(response.data.wind.speed);
   let windDisplay = document.querySelector("#wind-speed");
+  let humidity = Math.round(response.data.main.humidity);
+  let humidityDisplay = document.querySelector("#humidity");
 
   heading.innerHTML = `${temperature}`;
   descriptionElement.innerHTML = `${description}`;
   windDisplay.innerHTML = `${wind} mph`;
+  humidityDisplay.innerHTML = `${humidity}`;
 }
 
 function enterCity(event) {
