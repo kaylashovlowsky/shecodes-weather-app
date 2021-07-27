@@ -8,11 +8,16 @@ function displayWeatherElements(response) {
   let windDisplay = document.querySelector("#wind-speed");
   let humidity = Math.round(response.data.main.humidity);
   let humidityDisplay = document.querySelector("#humidity");
+  let iconElement = document.querySelector("#icon");
 
   heading.innerHTML = `${temperature}`;
   descriptionElement.innerHTML = `${description}`;
   windDisplay.innerHTML = `${wind} mph`;
-  humidityDisplay.innerHTML = `${humidity}`;
+  humidityDisplay.innerHTML = `${humidity}%`;
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function enterCity(event) {
