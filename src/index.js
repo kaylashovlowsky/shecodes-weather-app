@@ -1,5 +1,4 @@
 function displayWeatherElements(response) {
-  console.log(response.data);
   let temperature = Math.round(response.data.main.temp);
   let heading = document.querySelector("#temperature-display");
   let descriptionElement = document.querySelector("#weather-description");

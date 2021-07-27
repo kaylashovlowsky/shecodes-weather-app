@@ -66,12 +66,12 @@ h2 {
   padding: 0px 0px;
 }
 
-h3 {
+#icon {
   position: absolute;
-  top: 140px;
+  top: 200px;
   right: 100px;
-  font-size: 200px;
-  color: rgb(255, 238, 0);
+  width: 150px;
+  height: 150px;
 }
 
 #location-input {
