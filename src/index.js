@@ -1,21 +1,14 @@
 function displayWeatherElements(response) {
-  console.log(response.data);
-  let temperatureElement = document.querySelector("#temperature-display");
-  temperatureElement = Math.round(response.data.main.temp);
-  let wind = Math.round(response.data.wind[speed]);
-  let windDisplay = document.querySelector("#wind-speed");
-  windDisplay.innerHTML = `${wind} mph`;
-}
-
-let apiKey = "632a5d0f15a7053d4f021e44e4d50ed0";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Seattle&appid=${apiKey}&units=imperial`;
-console.log(apiUrl);
-axios.get(apiUrl).then(displayWeatherElements);
-
-function weatherDisplay(response) {
   let temperature = Math.round(response.data.main.temp);
   let heading = document.querySelector("#temperature-display");
+  let descriptionElement = document.querySelector("#weather-description");
+  let description = response.data.weather[0].description;
+  let wind = Math.round(response.data.wind.speed);
+  let windDisplay = document.querySelector("#wind-speed");
+
   heading.innerHTML = `${temperature}`;
+  descriptionElement.innerHTML = `${description}`;
+  windDisplay.innerHTML = `${wind} mph`;
 }
 
 function enterCity(event) {
@@ -26,7 +19,7 @@ function enterCity(event) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${locationSearch.value}&appid=${apiKey}&units=metric`;
 
   display.innerHTML = `${locationSearch.value}`;
-  axios.get(apiUrl).then(weatherDisplay);
+  axios.get(apiUrl).then(displayWeatherElements);
 }
 
 function convertToFahrenheit(event) {
@@ -35,6 +28,12 @@ function convertToFahrenheit(event) {
   let temperature = temperatureElement.innerHTML;
   temperature = Number(temperature);
   temperatureElement.innerHTML = Math.round((temperature * 9) / 5 + 32);
+}
+
+function search(city) {
+  let apiKey = "632a5d0f15a7053d4f021e44e4d50ed0";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayWeatherElements);
 }
 
 let form = document.querySelector("#location-input");
