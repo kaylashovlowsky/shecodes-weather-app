@@ -37,14 +37,6 @@ function enterCity(event) {
   axios.get(apiUrl).then(displayWeatherElements);
 }
 
-function convertToFahrenheit(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature-display");
-  let temperature = temperatureElement.innerHTML;
-  temperature = Number(temperature);
-  temperatureElement.innerHTML = Math.round((temperature * 9) / 5 + 32);
-}
-
 function search(city) {
   let apiKey = "632a5d0f15a7053d4f021e44e4d50ed0";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
@@ -96,9 +88,6 @@ function dailyForecast(response) {
 
 let form = document.querySelector("#location-input");
 form.addEventListener("submit", enterCity);
-
-let fahernheitLink = document.querySelector("#fahrenheit-link");
-fahernheitLink.addEventListener("click", convertToFahrenheit);
 
 let now = new Date();
 let days = [
