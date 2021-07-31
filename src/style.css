@@ -46,10 +46,6 @@ a:hover {
   font-size: 15px;
 }
 
-.daily-description {
-  padding: 20px 0px 10px 0px;
-}
-
 #date-display {
   font-size: 16px;
   font-weight: lighter;
@@ -96,12 +92,15 @@ p {
   margin: 0;
 }
 
-.weather-icons {
-  font-size: 40px;
-  color: rgb(238, 110, 59);
+.weather-forecast-date {
+  font-size: 20px;
+  padding: 40px 0px 0px 0px;
 }
 
-.weekdays {
-  font-size: 20px;
-  padding: 20px 0px 0px 0px;
+.weather-forecast-temperatures {
+  font-size: 14px;
+}
+
+.weather-forecast-temperature-low {
+  opacity: 0.7;
 }
