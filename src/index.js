@@ -1,6 +1,6 @@
 function getForecast(coordinates) {
   let apiKey = "632a5d0f15a7053d4f021e44e4d50ed0";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(dailyForecast);
 }
 
@@ -31,7 +31,7 @@ function enterCity(event) {
   let locationSearch = document.querySelector("#city-input");
   let display = document.querySelector("h1");
   let apiKey = "632a5d0f15a7053d4f021e44e4d50ed0";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${locationSearch.value}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${locationSearch.value}&appid=${apiKey}&units=imperial`;
 
   display.innerHTML = `${locationSearch.value}`;
   axios.get(apiUrl).then(displayWeatherElements);
@@ -47,7 +47,7 @@ function convertToFahrenheit(event) {
 
 function search(city) {
   let apiKey = "632a5d0f15a7053d4f021e44e4d50ed0";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayWeatherElements);
 }
 function formatDay(timestamp) {
@@ -64,7 +64,7 @@ function dailyForecast(response) {
 
   let forecastHTML = `<div class="row">`;
   forecast.forEach(function (forecastDay, index) {
-    if (index < 6) {
+    if (index > 0 && index < 7) {
       forecastHTML =
         forecastHTML +
         `
