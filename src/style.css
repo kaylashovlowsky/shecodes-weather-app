@@ -7,12 +7,18 @@ a:hover {
   color: black;
 }
 
+body {
+  background: #1dad9b;
+}
+
 .btn-forecast {
   background-color: turquoise;
   color: white;
 }
 
 .card {
+  box-shadow: 0px 20px 40px 0px rgba(21, 97, 110, 0.08);
+  border-radius: 20px;
   display: block;
   position: relative;
   margin: 0 auto;
@@ -59,7 +65,11 @@ h1 {
 
 h2 {
   font-size: 60px;
-  padding: 0px 0px;
+  padding: 0px 0px 30px 0px;
+}
+
+.humidity {
+  opacity: 0.7;
 }
 
 #icon {
@@ -75,10 +85,12 @@ h2 {
 }
 
 p {
+  opacity: 0.7;
   padding: 0px 0px;
 }
 #source-code {
-  padding: 0px 0px 80px 320px;
+  opacity: 0.7;
+  padding: 0px 0px 80px 0px;
 }
 
 .temperature {
@@ -102,5 +114,9 @@ p {
 }
 
 .weather-forecast-temperature-low {
+  opacity: 0.7;
+}
+
+.wind {
   opacity: 0.7;
 }
