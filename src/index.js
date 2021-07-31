@@ -44,11 +44,38 @@ function search(city) {
   axios.get(apiUrl).then(displayWeatherElements);
 }
 
+function dailyForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri"];
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+              <div class="col-2">
+                <div class="weather-forecast-date">${day}</div>
+                <img
+                  class="weather-icons-daily"
+                  src="http://openweathermap.org/img/wn/10d@2x.png"
+                  width="60"
+                />
+                <div class="weather-forecast-temperatures">
+                  <span class="weather-forecast-temperature-high">20°</span>
+                  <span class="weather-forecast-temperature-low">10°</span>
+                </div>
+              </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 let form = document.querySelector("#location-input");
 form.addEventListener("submit", enterCity);
 
 let fahernheitLink = document.querySelector("#fahrenheit-link");
 fahernheitLink.addEventListener("click", convertToFahrenheit);
+
+dailyForecast();
 
 let now = new Date();
 let days = [
