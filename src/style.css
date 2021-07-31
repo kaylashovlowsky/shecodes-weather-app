@@ -23,10 +23,6 @@ a:hover {
   margin: 40px 40px;
 }
 
-.celsius {
-  font-size: 16px;
-}
-
 .city {
   padding: 20px 0px 5px 0px;
 }
@@ -50,6 +46,10 @@ a:hover {
   font-size: 16px;
   font-weight: lighter;
   margin: 0;
+}
+
+.fahrenheit {
+  font-size: 20px;
 }
 
 h1 {
