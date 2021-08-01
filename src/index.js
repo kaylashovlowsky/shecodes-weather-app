@@ -87,7 +87,7 @@ function dailyForecast(response) {
 }
 
 let form = document.querySelector("#location-input");
-form.addEventListener("submit", enterCity);
+form.addEventListener("click", enterCity);
 
 let now = new Date();
 let days = [
