@@ -26,6 +26,12 @@ function displayWeatherElements(response) {
   getForecast(response.data.coord);
 }
 
+function search(city) {
+  let apiKey = "632a5d0f15a7053d4f021e44e4d50ed0";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+  axios.get(apiUrl).then(displayWeatherElements);
+}
+
 function enterCity(event) {
   event.preventDefault();
   let locationSearch = document.querySelector("#city-input");
@@ -34,12 +40,6 @@ function enterCity(event) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${locationSearch.value}&appid=${apiKey}&units=imperial`;
 
   display.innerHTML = `${locationSearch.value}`;
-  axios.get(apiUrl).then(displayWeatherElements);
-}
-
-function search(city) {
-  let apiKey = "632a5d0f15a7053d4f021e44e4d50ed0";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayWeatherElements);
 }
 
@@ -112,5 +112,3 @@ if (minute < 10) {
 
 let today = document.querySelector("#date-display");
 today.innerHTML = `${day} ${hour}:${minute}`;
-
-navigator.geolocation.getCurrentPosition(enterCity);
