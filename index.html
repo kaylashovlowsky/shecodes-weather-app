@@ -31,27 +31,27 @@
     <div class="container">
       <div class="card" style="width: 50rem">
         <div class="card-body">
-          <div class="row">
-            <div class="col-9">
-              <form id="location-input">
+          <form id="location-input">
+            <div class="row">
+              <div class="col-9">
                 <div class="mb-3">
                   <input
                     type="text"
-                    class="form-control"
                     id="city-input"
+                    class="form-control"
                     placeholder="Enter city or zipcode"
                   />
                 </div>
-              </form>
+              </div>
+              <div class="col-3">
+                <input
+                  type="submit"
+                  value="Get forecast"
+                  class="btn btn-primary mb-5"
+                />
+              </div>
             </div>
-            <div class="col-3">
-              <form>
-                <button type="submit" class="btn btn-primary mb-5">
-                  Get forecast
-                </button>
-              </form>
-            </div>
-          </div>
+          </form>
 
           <hr class="line-display" />
 
